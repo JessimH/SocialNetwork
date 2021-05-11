@@ -39,6 +39,9 @@ module.exports = gql`
         getPosts: [Post]
         getPost(postId: ID!): Post
     }
+    type Subscription{
+        newPost: Post!
+    }
     type Mutation{
         register(registerInput: RegisterInput): User!
         login(username: String!, password: String!): User!
