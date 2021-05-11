@@ -4,22 +4,22 @@ const gql = require('graphql-tag')
 module.exports = gql`
     type Post{
         id: ID!
+        username: String!
         body: String!
         createdAt: String!
-        username: String!
     }
     type User{
         id: ID!
-        email: String!
-        token: String!
         username: String!
+        email: String!
         createdAt: String!
+        token: String!
     }
     input RegisterInput{
         username: String!
+        email: String!
         password: String!
         confirmPassword: String!
-        email: String!
     }
     type Query{
         # [] pour dire que c'est un Array of Posts
