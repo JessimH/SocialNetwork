@@ -8,13 +8,16 @@ const { MONGODB } = require('./config.js')
 //creation du serveur Apollo avec les query et fonctions que l'ont a créé
 const server = new ApolloServer({
     typeDefs,
-    resolvers
+    resolvers,
+    context: ({ req }) => ({
+        req
+    })
 })
 
 //connexion a la base de donné mongoose
 mongoose.connect(MONGODB, { useNewUrlParser: true })
     .then(() => {
-        console.log('MONGOSB connected')
+        console.log('MONGODB connected')
         //start le serveur Apollo (il fonctionne avec express)
         return server.listen({ port: 5000 })
     })
