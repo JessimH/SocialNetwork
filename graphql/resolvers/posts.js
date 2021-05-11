@@ -1,6 +1,6 @@
 const { AuthenticationError } = require('apollo-server')
 
-const Post = require('../../modules/Post')
+const Post = require('../../models/Post')
 const checkAuth = require('../../util/check-auth')
 
 //fonctions qui vont s'executer quand on va lancer la query correspondante
