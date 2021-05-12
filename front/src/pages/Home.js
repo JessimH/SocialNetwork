@@ -30,24 +30,25 @@ function Home() {
 }
 
 const FETCH_POSTS_QUERY = gql`
-{
-    getPosts{
-        id
-        username
-        body
-        createdAt
-        likeCount
-        likes{
-            username
-        }
-        commentCount
-        comments{
+    query posts{
+        getPosts{
             id
             username
-            createdAt
             body
+            createdAt
+            likeCount
+            likes{
+                username
+            }
+            commentCount
+            comments{
+                id
+                username
+                createdAt
+                body
+            }
+        }
     }
-    }
-}`
+`
 
 export default Home
